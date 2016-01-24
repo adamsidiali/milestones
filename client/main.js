@@ -64,13 +64,13 @@ Template.thoughtInput.events({
 })
 
 
-Template.dailyCard.onCreated(function () {
+Template.thoughts_by_day.onCreated(function () {
     const self = this;
     self.showTopShadow = new ReactiveVar(false);
     self.showBottomShadow = new ReactiveVar(true);
 })
 
-Template.dailyCard.onRendered(function () {
+Template.thoughts_by_day.onRendered(function () {
     const self = this;
 
     let list = $(".card>ul");
@@ -85,7 +85,7 @@ Template.dailyCard.onRendered(function () {
 })
 
 
-Template.dailyCard.helpers({
+Template.thoughts_by_day.helpers({
     showTopShadow() {
         return Template.instance().showTopShadow.get();
     },
@@ -96,6 +96,6 @@ Template.dailyCard.helpers({
         return Milestones.getComponent("thoughts_by_day");
     },
     data() {
-        return SampleData;
+        Milestones.setData("currentDate", )
     }
 });

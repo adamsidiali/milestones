@@ -1,10 +1,12 @@
 let thoughts_by_day = React.createClass({
     getDefaultProps() {
-
+        data: {
+          currentDate: new Date()
+        }
     },
 
     currentDay() {
-        return this.props.data.toString();
+        return this.props.data.currentDate;
     },
 
     render() {
