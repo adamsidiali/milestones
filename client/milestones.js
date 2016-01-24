@@ -96,6 +96,6 @@ Template.dailyCard.helpers({
         return Milestones.getComponent("thoughts_by_day");
     },
     data() {
-        return Milestones.getData();
+        return SampleData;
     }
 });

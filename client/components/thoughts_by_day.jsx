@@ -1,6 +1,18 @@
 let thoughts_by_day = React.createClass({
+    getDefaultProps() {
+
+    },
+
+    currentDay() {
+        return this.props.data;
+    },
+
     render() {
-        return <span>Thoughts By Day</span>
+        return (
+            <div className="day-wrapper">
+                <span className="day-title">{this.currentDay()}</span>
+            </div>
+        )
     }
 });
 
