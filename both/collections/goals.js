@@ -7,4 +7,4 @@ const GoalSchema = new SimpleSchema({
   }
 });
 
-Goals.attaSchema(GoalSchema);
+Goals.attachSchema(GoalSchema);

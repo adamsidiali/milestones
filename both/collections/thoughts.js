@@ -21,7 +21,8 @@ const ThoughtsSchema = new SimpleSchema({
     label: "Content",
     optional: true
   },
-  "attachements": {
+  "attachments": {
+    type: String,
     optional: true
   },
   "event_time": {
@@ -34,4 +35,4 @@ const ThoughtsSchema = new SimpleSchema({
   }
 });
 
-Thoughts.attaSchema(ThoughtsSchema);
+Thoughts.attachSchema(ThoughtsSchema);
