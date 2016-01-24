@@ -63,17 +63,6 @@ Template.thoughtInput.events({
   }
 })
 
-
-<<<<<<< HEAD
-Template.dailyCard.onCreated(function () {
-  const self = this;
-  self.showTopShadow = new ReactiveVar(false);
-  self.showBottomShadow = new ReactiveVar(true);
-})
-
-Template.dailyCard.onRendered(function () {
-  const self = this;
-=======
 Template.thoughts_by_day.onCreated(function () {
     const self = this;
     self.showTopShadow = new ReactiveVar(false);
@@ -81,8 +70,7 @@ Template.thoughts_by_day.onCreated(function () {
 })
 
 Template.thoughts_by_day.onRendered(function () {
-    const self = this;
->>>>>>> 70b40eae8d8bd4b0bb84a3ac0f83cba52b55f34b
+  const self = this;
 
   let list = $(".card>ul");
   // run shadow check
@@ -95,9 +83,7 @@ Template.thoughts_by_day.onRendered(function () {
   });
 })
 
-
-<<<<<<< HEAD
-Template.dailyCard.helpers({
+Template.thoughts_by_day.helpers({
   showTopShadow() {
     return Template.instance().showTopShadow.get();
   },
@@ -110,19 +96,4 @@ Template.dailyCard.helpers({
   data() {
     return Thoughts.find().fetch();
   }
-=======
-Template.thoughts_by_day.helpers({
-    showTopShadow() {
-        return Template.instance().showTopShadow.get();
-    },
-    showBottomShadow() {
-        return Template.instance().showBottomShadow.get();
-    },
-    component() {
-        return Milestones.getComponent("thoughts_by_day");
-    },
-    data() {
-        Milestones.setData("currentDate", )
-    }
->>>>>>> 70b40eae8d8bd4b0bb84a3ac0f83cba52b55f34b
 });
