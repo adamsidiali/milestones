@@ -7,6 +7,13 @@ const ThoughtsSchema = new SimpleSchema({
    * 2 = "task"
    * 3 = "event"
    */
+  "created_at": {
+    type: Date,
+    autoValue: () => {
+      return new Date();
+    },
+    optional: false
+  },
   "type": {
     type: Number,
     label: "Type",
@@ -14,12 +21,12 @@ const ThoughtsSchema = new SimpleSchema({
   },
   "user": {
     type: String,
-    optional: false
+    optional: true // dev only
   },
   "content": {
     type: String,
     label: "Content",
-    optional: true
+    optional: false
   },
   "attachments": {
     type: String,
@@ -28,10 +35,6 @@ const ThoughtsSchema = new SimpleSchema({
   "event_time": {
     type: Date,
     optional: true
-  },
-  "created_at": {
-    type: Date,
-    optional: false
   }
 });
 
