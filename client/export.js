@@ -1,4 +1,5 @@
 class ReactiveView extends Mongo.Collection {
+
     get(callback) {
         let RV = this.findOne();
         if (callback) return callback(RV);
@@ -18,13 +19,22 @@ class ReactiveView extends Mongo.Collection {
             if (err) return err;
             if (callback) return callback(res);
             return res;
-        })
+        });
     }
 
     getComponent(component, callback) {
         let RV = this.findOne();
         if (callback) return callback(RV.components[component]);
         return RV.components[component];
+    }
+
+    setComponent(componentName, component, callback) {
+        let RV = this.findOne();
+        RV.components[componentName] = component;
+        this.update({}, {$set: { components: RV.components }}, function (err,res) {
+            if (callback) return callback(err,res);
+            return res;
+        });
     }
 
     getState(state, callback) {
