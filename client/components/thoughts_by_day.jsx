@@ -1,4 +1,5 @@
 let thoughts_by_day = React.createClass({
+<<<<<<< HEAD
   getDefaultProps() {
 
   },
