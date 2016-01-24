@@ -1,0 +1,116 @@
+
+.navigation-menu-backdrop
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    z-index 70
+    width 100vw
+    height 100vh
+    background-color rgba(0,0,0,0.5)
+    opacity 0
+    pointer-events none
+    transition 100ms ease-out
+
+    &.menu-active
+        opacity 1
+        pointer-events auto
+        transition 100ms ease-out
+
+.navigation-menu
+    position fixed
+    top 0
+    bottom 0
+    left -80vw
+    width 80vw
+    height 100vh
+    z-index 100
+    transition 100ms ease-out
+    background-color #eee
+
+    &.menu-active
+        transform translateX(80vw)
+        transition 100ms ease-out
+
+    @media (min-width: 800px)
+        left -40vw
+        width 40vw
+
+        &.menu-active
+            transform translateX(40vw)
+
+    ul
+        list-style none
+
+        li
+            padding 20px
+            text-decoration none
+            color #000
+            font-size 1.2rem
+            text-transform capitalize
+            font-weight 400
+            border-top 1px solid #eee
+            border-bottom 1px solid #eee
+
+            &:hover
+                background-color #fff
+                cursor pointer
+
+            &.navigation-menu-title
+                font-size 1.2rem
+                font-weight 900
+                text-transform uppercase
+
+            &.route-active
+                font-weight 700
+                background-color #fff
+
+
+.admin-bar
+    position fixed
+    top 0
+    left 0
+    right 0
+    height 60px
+    z-index 10
+    background-color #eee
+    display flex
+    flex-flow row nowrap
+    justify-content flex-start
+    padding 0 20px
+    list-style none
+
+    *
+        margin auto 0
+        font-size 1.2rem
+
+    .toggle-navigation
+        margin auto 0
+        color #aaa
+
+        i
+            font-size 2rem
+
+        &:hover
+            cursor pointer
+            color #000
+
+    .navigation-title
+        font-weight 700
+        margin auto 20px
+        color #aaa
+
+
+
+
+.navigation-content
+    position fixed
+    z-index 40
+    top 60px
+    left 0
+    right 0
+    bottom 60px
+    display flex
+    justify-content flex-start
+    flex-flow column nowrap

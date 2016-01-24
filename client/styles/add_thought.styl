@@ -1,0 +1,38 @@
+.blur-thought-input-toggle
+    position fixed
+    bottom 20px
+    right 20px
+    color #ddd
+    font-weight 300
+    z-index 91
+    font-size 0.85rem
+
+    &:hover
+        cursor pointer
+
+.add-thought-input
+    position fixed
+    bottom 0
+    left 0
+    right 0
+    min-height 60px
+    z-index 90
+    border 0
+    width 100%
+    outline none
+    box-shadow none
+    font-weight 300
+    padding 10px 20px
+    background-color #eee
+    transition 100ms ease-out
+    display flex
+    flex-flow column nowrap
+    justify-content flex-start
+    font-size 1rem
+
+    &:focus
+        min-height 100vh
+        background-color #fff
+        color #000
+        transition 100ms ease-out
+        font-size 1.25rem

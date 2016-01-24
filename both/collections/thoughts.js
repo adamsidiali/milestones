@@ -21,7 +21,7 @@ const ThoughtsSchema = new SimpleSchema({
     label: "Content",
     optional: true
   },
-  "attachements": {
+  "attachments": {
     optional: true
   },
   "event_time": {
