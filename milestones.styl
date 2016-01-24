@@ -1,0 +1,325 @@
+html,body,body *
+    margin 0
+    padding 0
+    box-sizing border-box
+    font-family "Roboto", sans-serif
+    transition 100ms ease-out
+
+html
+    font-size 16px
+    line-height 1
+
+    h1
+        font-size 2rem
+
+    h2
+        font-size 1.5rem
+
+    p
+        font-size 1rem
+
+.animated
+    animation-duration 300ms
+
+body
+    background-color #eee
+
+.navigation-menu-backdrop
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    z-index 70
+    width 100vw
+    height 100vh
+    background-color rgba(0,0,0,0.5)
+    opacity 0
+    pointer-events none
+    transition 100ms ease-out
+
+    &.menu-active
+        opacity 1
+        pointer-events auto
+        transition 100ms ease-out
+
+.navigation-menu
+    position fixed
+    top 0
+    bottom 0
+    left -80vw
+    width 80vw
+    height 100vh
+    z-index 100
+    transition 100ms ease-out
+    background-color #eee
+
+    &.menu-active
+        transform translateX(80vw)
+        transition 100ms ease-out
+
+    @media (min-width: 800px)
+        left -40vw
+        width 40vw
+
+        &.menu-active
+            transform translateX(40vw)
+
+    ul
+        list-style none
+
+        li
+            padding 20px
+            text-decoration none
+            color #000
+            font-size 1.2rem
+            text-transform capitalize
+            font-weight 400
+            border-top 1px solid #eee
+            border-bottom 1px solid #eee
+
+            &:hover
+                background-color #fff
+                cursor pointer
+
+            &.navigation-menu-title
+                font-size 1.5rem
+                background-color #fff
+                font-weight 900
+                text-transform uppercase
+                letter-spacing 20px
+
+            &.route-active
+                font-weight 700
+                background-color #fff
+
+
+.admin-bar
+    position fixed
+    top 0
+    left 0
+    right 0
+    height 60px
+    z-index 10
+    background-color #eee
+    display flex
+    flex-flow row nowrap
+    justify-content flex-start
+    padding 0 20px
+    list-style none
+
+    *
+        margin auto 0
+        font-size 1.2rem
+
+    .toggle-navigation
+        margin auto 0
+        color #aaa
+
+        i
+            font-size 2rem
+
+        &:hover
+            cursor pointer
+            color #000
+
+    .navigation-title
+        font-weight 700
+        margin auto 20px
+        color #aaa
+
+.content-shadow
+    position fixed
+    top 124px
+    right 0
+    left 0
+    z-index 80
+    height 10px
+    background -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%)
+    background -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%)
+    background linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%)
+    opacity 0
+    pointer-events none
+
+    &.lower
+        top auto
+        bottom 60px
+        background -moz-linear-gradient(bottom,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%)
+        background -webkit-linear-gradient(bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%)
+        background linear-gradient(to top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%)
+
+    &.shadow-active
+        opacity 0.25
+
+
+.navigation-content
+    position fixed
+    z-index 40
+    top 60px
+    left 0
+    right 0
+    bottom 60px
+    display flex
+    justify-content flex-start
+    flex-flow column nowrap
+
+
+.card-title-wrapper
+    color #000
+    padding 0px 20px
+    margin 20px 0
+    background-color #eee
+    box-sizing border-box
+    display flex
+    flex-flow row nowrap
+    justify-content flex-start
+
+    *
+        margin auto 0
+
+    span.card-title
+        font-weight 700
+
+    span.card-date
+        font-weight 100
+        color #000
+        margin-left 20px
+        font-size 1.1rem
+
+    span.card-settings
+        margin-left auto
+
+        i
+            color #111
+            margin-right 20px
+
+            &:last-of-type
+                margin-right 0
+
+.card
+    background-color #eee
+    flex 1
+    margin 0px auto
+    border 0px solid #eee
+    display flex
+    flex-flow column nowrap
+    justify-content flex-start
+    max-width 100vw
+    width 800px
+
+
+
+
+    ul
+        list-style none
+        flex 1
+        overflow scroll
+
+        li
+            padding 20px
+            line-height 20px
+            background-color #fff
+
+            &:nth-of-type(odd)
+                background-color #e8ffff
+
+            &.task-spacer-top
+                border-bottom 1px solid #eee
+                padding 0
+            &.task-spacer-bottom
+                border-top 1px solid #eee
+                padding 0
+
+                span
+                    display block
+                    padding 3px 20px
+                    background-color #eee
+                    color #aaa
+                    font-size 0.7rem
+                    font-weight 700
+                    text-transform uppercase
+
+            &.task
+                display flex
+                flex-flow row nowrap
+                justify-content flex-start
+
+                i
+                    flex 0 0 auto
+                    margin 0
+                    margin-top 3px
+                    margin-right 20px
+
+                span
+                    font-weight 300
+
+                    &.task-time
+                        font-weight 700
+                        margin-right 20px
+
+                    &.task-body
+                        display flex
+                        flex-flow column nowrap
+                        justify-content flex-start
+
+                        span
+                            flex 0 0 auto
+                            margin-bottom 5px
+
+                        span.task-effort
+                            margin 0
+                            margin-bottom -10px
+                            font-size 0.9rem
+                            i
+                                color #ccc
+                                margin-right 5px
+
+
+            &.done-task
+                color #ccc
+
+                span
+                    text-decoration line-through
+
+                    &.task-body .task-effort
+                        display none
+
+
+.blur-thought-input-toggle
+    position fixed
+    bottom 20px
+    right 20px
+    color #ddd
+    font-weight 300
+    z-index 91
+    font-size 0.85rem
+
+    &:hover
+        cursor pointer
+
+.add-thought-input
+    position fixed
+    bottom 0
+    left 0
+    right 0
+    min-height 60px
+    z-index 90
+    border 0
+    width 100%
+    outline none
+    box-shadow none
+    font-weight 300
+    padding 10px 20px
+    background-color #eee
+    transition 100ms ease-out
+    display flex
+    flex-flow column nowrap
+    justify-content flex-start
+    font-size 1rem
+
+    &:focus
+        min-height 100vh
+        background-color #fff
+        color #000
+        transition 100ms ease-out
+        font-size 1.25rem

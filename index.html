@@ -1,0 +1,72 @@
+<head>
+  <title>Manifest</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,700,900' rel='stylesheet' type='text/css'>
+
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+</head>
+
+<body>
+
+</body>
+
+<template name="MainLayout">
+
+    <ul class="admin-bar">
+        <li class="toggle-navigation"><i class="fa fa-caret-right"></i></li>
+        <li class="navigation-title">Log</li>
+    </ul>
+
+    <div class="navigation-menu-backdrop {{#if menuIsActive}}menu-active{{/if}}"> </div>
+    <div class="navigation-menu {{#if menuIsActive}}menu-active{{/if}}">
+        <ul>
+            <li class="navigation-menu-title">Manifest</li>
+            {{#each routes}}
+
+                <li class="{{#if active}}route-active{{/if}}">{{name}}</li>
+
+            {{/each}}
+        </ul>
+    </div>
+    <div class="navigation-content">
+        {{> Template.dynamic template=content }}
+    </div>
+
+    {{> thoughtInput}}
+
+</template>
+
+<template name="dailyCard">
+
+    <div class="content-shadow {{#if showTopShadow}}shadow-active{{/if}}"> </div>
+
+    <h2 class="card-title-wrapper"><span class="card-title">Today</span> <span class="card-date">1.16.16</span> <span class="card-settings"><i class="fa fa-ellipsis-v "></i></span></h2>
+    <div class="card">
+
+        <ul>
+            <li class="task-spacer-bottom"><span>Schedule</span></li>
+            <li class="task"><i class="fa fa-clock-o"></i><span class="task-time">7p</span><span class="task-body">Ruby's birthday party</span></li>
+            <li class="task-spacer-top"></li>
+            <li class="task-spacer-bottom"><span>Tasks</span></li>
+            <li class="task"><i class="fa fa-square"></i><span class="task-body">go pick up laundry</span></li>
+            <li class="task"><i class="fa fa-square"></i><span class="task-body"><span>issues 588 &amp; 589 #work</span><span class="task-effort"><i class="fa fa-coffee"></i><i class="fa fa-coffee"></i></span></span></li>
+            <li class="task done-task"><i class="fa fa-check-square"></i><span class="task-body"><span>other task that's longer but can't be more oh yeah let's rock n roll</span><span class="task-effort"><i class="fa fa-coffee"></i></span></span></li>
+            <li class="task done-task"><i class="fa fa-check-square"></i><span class="task-body">something else</span></li>
+            <li class="task-spacer-top"></li>
+            <li class="task-spacer-bottom"><span>Thoughts</span></li>
+            <li class="task"><span class="task-body">had an interesting conversation with Sami today about some car stuff</span></li>
+            <li class="task"><span class="task-body">jerry 555-555-5555</span></li>
+        </ul>
+
+    </div>
+
+    <div class="content-shadow lower {{#if showBottomShadow}}shadow-active{{/if}}"> </div>
+
+</template>
+
+<template name="thoughtInput">
+    {{#if addingThought}}<span class="blur-thought-input-toggle">CANCEL</span>{{/if}}
+    <input class="add-thought-input" type="text" placeholder="start typing a thought" />
+</template>
