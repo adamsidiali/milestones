@@ -4,7 +4,7 @@ let thoughts_by_day = React.createClass({
     },
 
     currentDay() {
-        return this.props.data;
+        return this.props.data.toString();
     },
 
     render() {
