@@ -22,6 +22,7 @@ const ThoughtsSchema = new SimpleSchema({
     optional: true
   },
   "attachments": {
+    type: String,
     optional: true
   },
   "event_time": {
