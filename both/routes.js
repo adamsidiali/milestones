@@ -16,20 +16,20 @@ FlowRouter.route("/", {
 FlowRouter.route("/organize", {
     name: "organizeView",
     action: () => {
-        BlazeLayout.render("MainLayout", {content: "dailyCard"})
+        BlazeLayout.render("Main", {content: "dailyCard"})
     }
 })
 
 FlowRouter.route("/log", {
     name: "logView",
     action: () => {
-        BlazeLayout.render("MainLayout", {content: "dailyCard"})
+        BlazeLayout.render("Main", {content: "dailyCard"})
     }
 })
 
 FlowRouter.route("/analyze", {
     name: "analyzeView",
     action: () => {
-        BlazeLayout.render("MainLayout", {content: "dailyCard"})
+        BlazeLayout.render("Main", {content: "dailyCard"})
     }
 })
