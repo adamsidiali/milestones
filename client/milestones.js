@@ -91,5 +91,11 @@ Template.dailyCard.helpers({
     },
     showBottomShadow() {
         return Template.instance().showBottomShadow.get();
+    },
+    component() {
+        return Milestones.getComponent("thoughts_by_day");
+    },
+    data() {
+        return Milestones.getData();
     }
 });

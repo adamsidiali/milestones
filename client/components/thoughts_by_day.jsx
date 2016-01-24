@@ -5,6 +5,7 @@ let thoughts_by_day = React.createClass({
 });
 
 console.log("requesting to add component thoughts_by_day...")
+
 Milestones.setComponent("thoughts_by_day", thoughts_by_day, function (err,res) {
     if (err) return console.log(err);
     return console.log("thoughts_by_day successfully added");

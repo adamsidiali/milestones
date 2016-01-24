@@ -42,24 +42,8 @@
 
     <div class="content-shadow {{#if showTopShadow}}shadow-active{{/if}}"> </div>
 
-    <h2 class="card-title-wrapper"><span class="card-title">Today</span> <span class="card-date">1.16.16</span> <span class="card-settings"><i class="fa fa-ellipsis-v "></i></span></h2>
-    <div class="card">
-
-        <ul>
-            <li class="task-spacer-bottom"><span>Schedule</span></li>
-            <li class="task"><i class="fa fa-clock-o"></i><span class="task-time">7p</span><span class="task-body">Ruby's birthday party</span></li>
-            <li class="task-spacer-top"></li>
-            <li class="task-spacer-bottom"><span>Tasks</span></li>
-            <li class="task"><i class="fa fa-square"></i><span class="task-body">go pick up laundry</span></li>
-            <li class="task"><i class="fa fa-square"></i><span class="task-body"><span>issues 588 &amp; 589 #work</span><span class="task-effort"><i class="fa fa-coffee"></i><i class="fa fa-coffee"></i></span></span></li>
-            <li class="task done-task"><i class="fa fa-check-square"></i><span class="task-body"><span>other task that's longer but can't be more oh yeah let's rock n roll</span><span class="task-effort"><i class="fa fa-coffee"></i></span></span></li>
-            <li class="task done-task"><i class="fa fa-check-square"></i><span class="task-body">something else</span></li>
-            <li class="task-spacer-top"></li>
-            <li class="task-spacer-bottom"><span>Thoughts</span></li>
-            <li class="task"><span class="task-body">had an interesting conversation with Sami today about some car stuff</span></li>
-            <li class="task"><span class="task-body">jerry 555-555-5555</span></li>
-        </ul>
-
+    <div>
+        {{> React component=component data=data }}
     </div>
 
     <div class="content-shadow lower {{#if showBottomShadow}}shadow-active{{/if}}"> </div>
